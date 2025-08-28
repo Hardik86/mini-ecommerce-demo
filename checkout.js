@@ -1,46 +1,30 @@
-// Sanitize function to prevent XSS
-function sanitize(text) {
-    return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-}
+document.addEventListener('DOMContentLoaded', ()=>{
+    const form = document.getElementById('checkoutForm');
+    const feedback = document.getElementById('confirmationMessage');
 
-// Form validation and submission
-document.getElementById('checkoutForm').addEventListener('submit', function(e){
-    e.preventDefault(); // prevent default form submission
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault();
 
-    const name = sanitize(document.getElementById('name').value.trim());
-    const email = sanitize(document.getElementById('email').value.trim());
-    const address = sanitize(document.getElementById('address').value.trim());
-    const phone = sanitize(document.getElementById('phone').value.trim());
+        const name = form.name.value.trim().replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        const email = form.email.value.trim().replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        const address = form.address.value.trim().replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        const phone = form.phone.value.trim().replace(/</g,"&lt;").replace(/>/g,"&gt;");
 
-    // Basic front-end validation
-    if(!name || !email || !address) {
-        alert("Please fill in all required fields.");
-        return;
-    }
+        if(!name||!email||!address){
+            feedback.textContent = "Please fill all required fields!";
+            feedback.style.color = "red";
+            return;
+        }
 
-    // Regex email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailRegex.test(email)){
+            feedback.textContent = "Please enter a valid email!";
+            feedback.style.color = "red";
+            return;
+        }
 
-    // Optional: phone validation (basic)
-    const phonePattern = /^[0-9\-\(\)\s]+$/;
-    if(phone && !phonePattern.test(phone)) {
-        alert("Please enter a valid phone number.");
-        return;
-    }
-
-    // Simulate order submission (no backend)
-    document.getElementById('confirmationMessage').innerHTML = `
-        <h2>Thank you, ${name}!</h2>
-        <p>Your order has been received. A confirmation email will be sent to ${email}.</p>
-    `;
-
-    // Clear cart after checkout
-    localStorage.removeItem('cart');
-
-    // Reset form
-    document.getElementById('checkoutForm').reset();
+        feedback.textContent = "Order submitted successfully!";
+        feedback.style.color = "green";
+        form.reset();
+    });
 });
