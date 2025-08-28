@@ -1,0 +1,106 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #4caf50;
+    color: white;
+}
+
+nav input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    width: 40%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #e8f5e9;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #388e3c;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Featured Products */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media(min-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* User Form */
+.user-form {
+    padding: 1rem;
+    background-color: #f1f8e9;
+    border-radius: 10px;
+    margin: 2rem 1rem;
+}
+
+.user-form input, 
+.user-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4caf50;
+    color: white;
+    margin-top: 2rem;
+}
