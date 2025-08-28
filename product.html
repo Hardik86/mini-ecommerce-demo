@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:;">
-    <title>Products - EcoShop</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="products.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - EcoShop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar (reuse from index.html) -->
-    <nav>
-        <div class="logo">EcoShop</div>
-        <input type="text" placeholder="Search products..." aria-label="Search products">
-        <a href="cart.html" aria-label="View cart">🛒 Cart</a>
-    </nav>
+  <nav>
+    <div class="logo">EcoShop</div>
+    <a href="index.html">Home</a>
+    <a href="cart.html">🛒 Cart</a>
+  </nav>
 
-    <main>
-        <section class="product-list">
-            <h1>All Products</h1>
-            <div class="product-grid" id="productGrid">
-                <!-- JS will insert products here dynamically -->
-            </div>
-        </section>
-    </main>
+  <main>
+    <section class="product-detail-section" id="productDetail"></section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 EcoShop. Accessible & Ethical Demo.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 EcoShop. Accessible & Ethical Demo.</p>
+  </footer>
 
-    <script src="js/products.js" defer></script>
+  <script src="products.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
