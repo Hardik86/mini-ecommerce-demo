@@ -1,4 +1,4 @@
 #!/bin/bash
-# Simple deploy script for local testing
-echo "Running EcoShop demo..."
-open index.html
+# Quick deployment reminder script
+echo "Make sure all files are in the same folder."
+echo "Open index.html in your browser to check the site."
