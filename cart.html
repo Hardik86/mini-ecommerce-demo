@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:;">
+    <title>Cart - EcoShop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar (reuse from index.html) -->
+    <nav>
+        <div class="logo">EcoShop</div>
+        <input type="text" placeholder="Search products..." aria-label="Search products">
+        <a href="cart.html" aria-label="View cart">🛒 Cart</a>
+    </nav>
+
+    <main>
+        <section class="cart-section">
+            <h1>Your Cart</h1>
+            <div id="cartItems">
+                <!-- JS will render cart items here -->
+            </div>
+            <div class="cart-summary">
+                <p>Subtotal: $<span id="subtotal">0.00</span></p>
+                <p>Tax (5%): $<span id="tax">0.00</span></p>
+                <p>Total: $<span id="total">0.00</span></p>
+                <button id="checkoutBtn">Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EcoShop. Accessible & Ethical Demo.</p>
+    </footer>
+
+    <script src="js/cart.js" defer></script>
+</body>
+</html>
