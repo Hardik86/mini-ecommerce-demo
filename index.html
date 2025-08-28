@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:;">
+    <!-- 
+        Content-Security-Policy above: 
+        - Blocks unsafe scripts from running from outside sources.
+        - Only allows images from our repo or https sources.
+        - Prevents XSS injections from external scripts.
+    -->
+    <title>Mini E-Commerce Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">EcoShop</div>
+        <input type="text" placeholder="Search products..." aria-label="Search products">
+        <a href="cart.html" aria-label="View cart">🛒 Cart</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to EcoShop</h1>
+        <p>Your ethical, sustainable marketplace.</p>
+        <a href="products.html" class="btn-primary">Shop Now</a>
+    </header>
+
+    <!-- Featured Products Section -->
+    <main>
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Example product card -->
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1582407947304-22c3b1ef9cf8?auto=format&fit=crop&w=400" alt="Eco-friendly tote bag">
+                    <h3>Tote Bag</h3>
+                    <p>$25.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1592878902032-fc1e3098de8c?auto=format&fit=crop&w=400" alt="Reusable water bottle">
+                    <h3>Reusable Bottle</h3>
+                    <p>$15.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <!-- Add more products as needed -->
+            </div>
+        </section>
+
+        <!-- User Form Section -->
+        <section class="user-form">
+            <h2>Contact / Demo Request</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required aria-required="true" maxlength="50">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required aria-required="true" maxlength="50">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required aria-required="true" maxlength="300"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <p id="formFeedback" role="alert"></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 EcoShop. Accessible & Ethical Demo.</p>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
