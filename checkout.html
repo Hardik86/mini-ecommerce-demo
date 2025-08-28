@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkout - EcoShop</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - EcoShop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
+  <nav>
     <div class="logo">EcoShop</div>
     <a href="index.html">Home</a>
     <a href="cart.html">🛒 Cart</a>
-</nav>
+  </nav>
 
-<main>
-    <h1>Checkout</h1>
-    <form id="checkoutForm">
+  <main>
+    <section class="checkout-section">
+      <h1>Checkout</h1>
+      <form id="checkoutForm" novalidate>
         <label for="name">Full Name *</label>
         <input type="text" id="name" name="name" required placeholder="John Doe">
 
@@ -23,20 +24,21 @@
         <input type="email" id="email" name="email" required placeholder="john@example.com">
 
         <label for="address">Address *</label>
-        <textarea id="address" name="address" required placeholder="123 Main St"></textarea>
+        <textarea id="address" name="address" required placeholder="123 Main St, City, Country"></textarea>
 
-        <label for="phone">Phone</label>
+        <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
 
         <button type="submit">Submit Order</button>
-    </form>
-    <div id="confirmationMessage" aria-live="polite"></div>
-</main>
+      </form>
+      <div id="confirmationMessage" aria-live="polite"></div>
+    </section>
+  </main>
 
-<footer>
+  <footer>
     <p>&copy; 2025 EcoShop. Accessible & Ethical Demo.</p>
-</footer>
+  </footer>
 
-<script src="checkout.js" defer></script>
+  <script src="checkout.js"></script>
 </body>
 </html>
