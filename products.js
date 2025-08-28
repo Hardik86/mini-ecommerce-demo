@@ -1,4 +1,3 @@
-// Sample product data
 const products = [
     { id:1, name:"Eco Water Bottle", price:15.99, image:"https://picsum.photos/id/1011/400/300" },
     { id:2, name:"Reusable Bag", price:9.99, image:"https://picsum.photos/id/1012/400/300" },
@@ -6,13 +5,11 @@ const products = [
     { id:4, name:"Bamboo Toothbrush", price:4.99, image:"https://picsum.photos/id/1014/400/300" }
 ];
 
-// Render products into the grid
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('productGrid');
     products.forEach(prod => {
         const card = document.createElement('div');
         card.className = 'product-card';
-        card.setAttribute('role', 'listitem');
         card.innerHTML = `
             <img src="${prod.image}" alt="${prod.name}" />
             <h2>${prod.name}</h2>
@@ -23,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Simple cart function placeholder
 function addToCart(id) {
     alert(`Product ${id} added to cart!`);
 }
