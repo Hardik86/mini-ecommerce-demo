@@ -32,4 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset form
         form.reset();
     });
+
+    // ---- Animate cart button function ----
+    function animateCartButton(button) {
+        button.style.transform = "scale(1.2)";
+        setTimeout(() => {
+            button.style.transform = "scale(1)";
+        }, 200);
+    }
+
+    // Example: attach to all "Add to Cart" buttons
+    const addCartButtons = document.querySelectorAll('.add-to-cart');
+    addCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            animateCartButton(button);
+            // Here you can also call your existing addToCart logic
+            // addToCart(button.dataset.productId); // example
+        });
+    });
 });
